@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+<title>
+    🎮tetris
+</title>
+
+<head>
+
+    <style>
+        #game_area {
+            display: flex;
+            background-color: bisque;
+            width: 1500px;
+            height: 700px;
+            border-radius: 50px;
+        }
+
+        #tetris {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: red;
+            width: 1040px;
+            height: 740px;
+            border-radius: 30px;
+            gap: 10px;
+        }
+
+        #tetris_next {
+            display: flex;
+            background-color: blue;
+            width: 500px;
+            height: 740px;
+            border-radius: 30px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #next_shape {
+            background-color: black;
+            width: 170px;
+            height: 300px;
+
+        }
+
+        #title {
+            font-size: 30;
+            font-weight: bold;
+            background-color: green;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            align-content: center;
+
+        }
+
+        #play_area {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
+            background-color: aqua;
+            aspect-ratio: 1;
+            width: 1040px;
+            height: 640px;
+            
+        }
+
+        .tetris_box{
+            background-color: rgb(48, 45, 45);
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgb(241, 234, 234);
+        }
+
+        #action_buttons {
+            display: flex;
+            background-color: rgb(226, 43, 217);
+            width: 1000px;
+            height: 60px;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+
+        .actions {
+            background-color: whitesmoke;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            text-align: center;
+            align-content: center;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="game_area">
+        <div id="tetris">
+            <div id="title">La Tetris</div>
+            <div id="play_area"></div>
+            <div id="action_buttons">
+                <div id="score" class="actions">SCORE</div>
+                <button id="start" class="actions">START</button>
+                <button id="restart" class="actions">RESTART</button>
+            </div>
+        </div>
+        <div id="tetris_next">
+            <div id="next_shape"></div>
+
+        </div>
+    </div>
+
+
+    <script>
+        playArea = document.querySelector("#play_area")
+
+        for (let i = 0; i< 12*20; i++){
+            const divEl = document.createElement("div");
+            divEl.className = "tetris_box"
+            playArea.appendChild(divEl)
+        }
+    </script>
+
+</body>
+
+</html>
